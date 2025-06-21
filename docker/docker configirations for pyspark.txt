@@ -1,0 +1,37 @@
+--docker configirations for pyspark
+
+1.Pulling the Jupyter/Pyspark image
+
+"docker run jupyter/pyspark-notebook"\
+
+2.port binding and 8888 for notebook 4040 for spark UI
+
+"docker run -p 8888:8888 -p 4040:4040 jupyter/pyspark-notebook" 
+
+3.How to stop container when the conatiner is active
+
+"docker ps" -- #list all container
+"docker stop <conatiner name or ID>" ---#stopping the container
+
+4.How to Start again the container
+
+"docker ps -a" ---  # First list all containers
+"docker start -ai jolly_cartwright"
+
+
+once u stop the conatiner and start again then everytime port bind this --- "docker run -p 8888:8888 -p 4040:4040 jupyter/pyspark-notebook
+"
+
+-------setup -daily
+
+1. Pull the Image (if not already pulled) --'docker pull jupyter/pyspark-notebook'
+2. Run the Container with Port Binding & Name-- 'docker run -d --name pyspark-lab -p 8888:8888 -p 4040:4040 jupyter/pyspark-notebook'
+3. Open Jupyter --
+		
+	Look for a line like:http://127.0.0.1:8888/?token=xxxxxxxxxxxxxxxx --➡️ Open that link in your browser to access Jupyter.
+🔁 Reusing the Container (After Stop)
+🛑 To stop the container:docker stop pyspark-lab
+
+▶️ To start it again:-docker "docker start -ai pyspark-lab"
+
+
