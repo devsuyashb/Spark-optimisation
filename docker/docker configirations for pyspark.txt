@@ -26,11 +26,14 @@ once u stop the conatiner and start again then everytime port bind this --- "doc
 
 1. Pull the Image (if not already pulled) --'docker pull jupyter/pyspark-notebook'
 2. Run the Container with Port Binding & Name-- 'docker run -d --name pyspark-lab -p 8888:8888 -p 4040:4040 jupyter/pyspark-notebook'
-3. Open Jupyter --
+
+3.View logs for token---"docker logs pyspark-lab"
+ Open Jupyter --
 		
 	Look for a line like:http://127.0.0.1:8888/?token=xxxxxxxxxxxxxxxx --➡️ Open that link in your browser to access Jupyter.
+
 🔁 Reusing the Container (After Stop)
-🛑 To stop the container:docker stop pyspark-lab
+🛑 To stop the container:"docker stop pyspark-lab"
 
 ▶️ To start it again:-docker "docker start -ai pyspark-lab"
 
